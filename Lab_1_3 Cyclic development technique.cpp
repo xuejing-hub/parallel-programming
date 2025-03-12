@@ -1,3 +1,4 @@
+//可采用循环展开（unroll）技术，降低循环操作（循环判定、归纳变量递增/递减等）对性能的影响，甚至可以采用宏/模板技术彻底消除循环。
 #include <iostream>
 #include <vector>
 #include <chrono>
