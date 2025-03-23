@@ -1,4 +1,4 @@
-#基于OpenMP来完成思考更多算法设计思路来探索现代计算机体系结构中cache和超标量对程序性能的影响。
+//基于OpenMP来完成思考更多算法设计思路来探索现代计算机体系结构中cache和超标量对程序性能的影响。
 #include <iostream>
 #include <omp.h>
 #include <algorithm>
