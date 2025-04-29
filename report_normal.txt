@@ -1,0 +1,408 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 11  of event 'task-clock:ppp'
+# Event count (approx.): 2750000
+#
+# Children      Self  Command      Shared Object         Symbol                                                                                     
+# ........  ........  ...........  ....................  ...........................................................................................
+#
+    27.27%     0.00%  md5_program  [kernel.kallsyms]     [k] asm_exc_page_fault
+            |
+            ---asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               |          
+               |--18.18%--handle_mm_fault
+               |          count_memcg_events.constprop.0
+               |          
+                --9.09%--lock_vma_under_rcu
+
+    27.27%     0.00%  md5_program  [kernel.kallsyms]     [k] exc_page_fault
+            |
+            ---exc_page_fault
+               do_user_addr_fault
+               |          
+               |--18.18%--handle_mm_fault
+               |          count_memcg_events.constprop.0
+               |          
+                --9.09%--lock_vma_under_rcu
+
+    27.27%     0.00%  md5_program  [kernel.kallsyms]     [k] do_user_addr_fault
+            |
+            ---do_user_addr_fault
+               |          
+               |--18.18%--handle_mm_fault
+               |          count_memcg_events.constprop.0
+               |          
+                --9.09%--lock_vma_under_rcu
+
+    18.18%     0.00%  md5_program  ld-linux-x86-64.so.2  [.] 0x00007fa70a603b22
+            |
+            ---0x7fa70a603b22
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               __mmap_region
+               |          
+               |--9.09%--vma_merge_new_range
+               |          vma_expand
+               |          commit_merge
+               |          vma_prepare
+               |          vma_interval_tree_remove
+               |          
+                --9.09%--perf_event_mmap
+
+    18.18%     0.00%  md5_program  [kernel.kallsyms]     [k] entry_SYSCALL_64_after_hwframe
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               __mmap_region
+               |          
+               |--9.09%--vma_merge_new_range
+               |          vma_expand
+               |          commit_merge
+               |          vma_prepare
+               |          vma_interval_tree_remove
+               |          
+                --9.09%--perf_event_mmap
+
+    18.18%     0.00%  md5_program  [kernel.kallsyms]     [k] do_syscall_64
+            |
+            ---do_syscall_64
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               __mmap_region
+               |          
+               |--9.09%--vma_merge_new_range
+               |          vma_expand
+               |          commit_merge
+               |          vma_prepare
+               |          vma_interval_tree_remove
+               |          
+                --9.09%--perf_event_mmap
+
+    18.18%    18.18%  md5_program  [kernel.kallsyms]     [k] count_memcg_events.constprop.0
+            |          
+            |--9.09%--0x7fa70a04c1e1
+            |          0x7fa70a5bbf98
+            |          asm_exc_page_fault
+            |          exc_page_fault
+            |          do_user_addr_fault
+            |          handle_mm_fault
+            |          count_memcg_events.constprop.0
+            |          
+             --9.09%--0x7fa70a5fcb08
+                       0x7fa70a5fc4bf
+                       0x7fa70a5ffc8e
+                       __mempcpy_chk
+                       asm_exc_page_fault
+                       exc_page_fault
+                       do_user_addr_fault
+                       handle_mm_fault
+                       count_memcg_events.constprop.0
+
+    18.18%     0.00%  md5_program  [kernel.kallsyms]     [k] ksys_mmap_pgoff
+            |
+            ---ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               __mmap_region
+               |          
+               |--9.09%--vma_merge_new_range
+               |          vma_expand
+               |          commit_merge
+               |          vma_prepare
+               |          vma_interval_tree_remove
+               |          
+                --9.09%--perf_event_mmap
+
+    18.18%     0.00%  md5_program  ld-linux-x86-64.so.2  [.] 0x00007fa70a5fcb08
+            |
+            ---0x7fa70a5fcb08
+               |          
+               |--9.09%--0x7fa70a5fc4bf
+               |          0x7fa70a5ffc8e
+               |          __mempcpy_chk
+               |          asm_exc_page_fault
+               |          exc_page_fault
+               |          do_user_addr_fault
+               |          handle_mm_fault
+               |          count_memcg_events.constprop.0
+               |          
+                --9.09%--0x7fa70a5f582c
+
+    18.18%     0.00%  md5_program  [kernel.kallsyms]     [k] vm_mmap_pgoff
+            |
+            ---vm_mmap_pgoff
+               do_mmap
+               __mmap_region
+               |          
+               |--9.09%--vma_merge_new_range
+               |          vma_expand
+               |          commit_merge
+               |          vma_prepare
+               |          vma_interval_tree_remove
+               |          
+                --9.09%--perf_event_mmap
+
+    18.18%     0.00%  md5_program  [kernel.kallsyms]     [k] do_mmap
+            |
+            ---do_mmap
+               __mmap_region
+               |          
+               |--9.09%--vma_merge_new_range
+               |          vma_expand
+               |          commit_merge
+               |          vma_prepare
+               |          vma_interval_tree_remove
+               |          
+                --9.09%--perf_event_mmap
+
+    18.18%     0.00%  md5_program  [kernel.kallsyms]     [k] __mmap_region
+            |
+            ---__mmap_region
+               |          
+               |--9.09%--vma_merge_new_range
+               |          vma_expand
+               |          commit_merge
+               |          vma_prepare
+               |          vma_interval_tree_remove
+               |          
+                --9.09%--perf_event_mmap
+
+    18.18%    18.18%  md5_program  ld-linux-x86-64.so.2  [.] 0x0000000000014ef4
+            |
+            ---0x34000000340
+               0x7fa70a5f5ef4
+
+    18.18%     0.00%  md5_program  [kernel.kallsyms]     [k] handle_mm_fault
+            |
+            ---handle_mm_fault
+               count_memcg_events.constprop.0
+
+    18.18%     0.00%  md5_program  [unknown]             [.] 0x0000034000000340
+            |
+            ---0x34000000340
+               0x7fa70a5f5ef4
+
+    18.18%     0.00%  md5_program  [unknown]             [.] 0x00007fa70a27cbe8
+            |
+            ---0x7fa70a27cbe8
+               |          
+               |--9.09%--0x7fa70a5ea511
+               |          
+                --9.09%--0x7fa70a5ea503
+
+    18.18%     0.00%  md5_program  ld-linux-x86-64.so.2  [.] 0x00007fa70a5f5ef4
+            |
+            ---0x7fa70a5f5ef4
+
+     9.09%     9.09%  md5_program  [kernel.kallsyms]     [k] vma_interval_tree_remove
+            |
+            ---0x7fa70a603b22
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               __mmap_region
+               vma_merge_new_range
+               vma_expand
+               commit_merge
+               vma_prepare
+               vma_interval_tree_remove
+
+     9.09%     9.09%  md5_program  [kernel.kallsyms]     [k] lock_vma_under_rcu
+            |
+            ---0x48fb894853001899
+               std::__moneypunct_cache<wchar_t, true>::~__moneypunct_cache()
+               0x1
+               std::__timepunct<wchar_t>::__timepunct(std::__timepunct_cache<wchar_t>*, unsigned long)
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               lock_vma_under_rcu
+
+     9.09%     9.09%  md5_program  [kernel.kallsyms]     [k] perf_event_mmap
+            |
+            ---0x7fa70a603b22
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               __mmap_region
+               perf_event_mmap
+
+     9.09%     0.00%  md5_program  ld-linux-x86-64.so.2  [.] 0x00007fa70a5fc4bf
+            |
+            ---0x7fa70a5fc4bf
+               0x7fa70a5ffc8e
+               __mempcpy_chk
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               count_memcg_events.constprop.0
+
+     9.09%     0.00%  md5_program  [unknown]             [k] 0x48fb894853001899
+            |
+            ---0x48fb894853001899
+               std::__moneypunct_cache<wchar_t, true>::~__moneypunct_cache()
+               0x1
+               std::__timepunct<wchar_t>::__timepunct(std::__timepunct_cache<wchar_t>*, unsigned long)
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               lock_vma_under_rcu
+
+     9.09%     0.00%  md5_program  ld-linux-x86-64.so.2  [.] 0x00007fa70a5ffc8e
+            |
+            ---0x7fa70a5ffc8e
+               __mempcpy_chk
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               count_memcg_events.constprop.0
+
+     9.09%     0.00%  md5_program  libc.so.6             [.] 0x00007fa70a04c1e1
+            |
+            ---0x7fa70a04c1e1
+               0x7fa70a5bbf98
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               count_memcg_events.constprop.0
+
+     9.09%     0.00%  md5_program  libstdc++.so.6.0.33   [.] std::__moneypunct_cache<wchar_t, true>::~__moneypunct_cache()
+            |
+            ---std::__moneypunct_cache<wchar_t, true>::~__moneypunct_cache()
+               0x1
+               std::__timepunct<wchar_t>::__timepunct(std::__timepunct_cache<wchar_t>*, unsigned long)
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               lock_vma_under_rcu
+
+     9.09%     0.00%  md5_program  libc.so.6             [.] __mempcpy_chk
+            |
+            ---__mempcpy_chk
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               count_memcg_events.constprop.0
+
+     9.09%     0.00%  md5_program  libgcc_s.so.1         [.] 0x00007fa70a5bbf98
+            |
+            ---0x7fa70a5bbf98
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               count_memcg_events.constprop.0
+
+     9.09%     0.00%  md5_program  [unknown]             [.] 0x0000000000000001
+            |
+            ---0x1
+               std::__timepunct<wchar_t>::__timepunct(std::__timepunct_cache<wchar_t>*, unsigned long)
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               lock_vma_under_rcu
+
+     9.09%     0.00%  md5_program  [kernel.kallsyms]     [k] vma_merge_new_range
+            |
+            ---vma_merge_new_range
+               vma_expand
+               commit_merge
+               vma_prepare
+               vma_interval_tree_remove
+
+     9.09%     0.00%  md5_program  libstdc++.so.6.0.33   [.] std::__timepunct<wchar_t>::__timepunct(std::__timepunct_cache<wchar_t>*, unsigned long)
+            |
+            ---std::__timepunct<wchar_t>::__timepunct(std::__timepunct_cache<wchar_t>*, unsigned long)
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               lock_vma_under_rcu
+
+     9.09%     0.00%  md5_program  [kernel.kallsyms]     [k] vma_expand
+            |
+            ---vma_expand
+               commit_merge
+               vma_prepare
+               vma_interval_tree_remove
+
+     9.09%     9.09%  md5_program  ld-linux-x86-64.so.2  [.] 0x0000000000009503
+            |
+            ---0x25d228
+               0x7fa70a27cbe8
+               0x7fa70a5ea503
+
+     9.09%     9.09%  md5_program  ld-linux-x86-64.so.2  [.] 0x0000000000009511
+            |
+            ---0xd4fd0
+               0x7fa70a27cbe8
+               0x7fa70a5ea511
+
+     9.09%     0.00%  md5_program  [kernel.kallsyms]     [k] commit_merge
+            |
+            ---commit_merge
+               vma_prepare
+               vma_interval_tree_remove
+
+     9.09%     0.00%  md5_program  [unknown]             [.] 0x00000000000d4fd0
+            |
+            ---0xd4fd0
+               0x7fa70a27cbe8
+               0x7fa70a5ea511
+
+     9.09%     0.00%  md5_program  [unknown]             [.] 0x000000000025d228
+            |
+            ---0x25d228
+               0x7fa70a27cbe8
+               0x7fa70a5ea503
+
+     9.09%     9.09%  md5_program  ld-linux-x86-64.so.2  [.] 0x000000000001482c
+            |
+            ---0x7fa70a5fcb08
+               0x7fa70a5f582c
+
+     9.09%     0.00%  md5_program  [kernel.kallsyms]     [k] vma_prepare
+            |
+            ---vma_prepare
+               vma_interval_tree_remove
+
+     9.09%     9.09%  md5_program  libgcc_s.so.1         [.] __cpu_indicator_init
+            |
+            ---__cpu_indicator_init
+
+     9.09%     0.00%  md5_program  ld-linux-x86-64.so.2  [.] 0x00007fa70a5ea503
+            |
+            ---0x7fa70a5ea503
+
+     9.09%     0.00%  md5_program  ld-linux-x86-64.so.2  [.] 0x00007fa70a5ea511
+            |
+            ---0x7fa70a5ea511
+
+     9.09%     0.00%  md5_program  ld-linux-x86-64.so.2  [.] 0x00007fa70a5f582c
+            |
+            ---0x7fa70a5f582c
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

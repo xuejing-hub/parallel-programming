@@ -1,0 +1,793 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 15  of event 'task-clock:ppp'
+# Event count (approx.): 3750000
+#
+# Children      Self  Command   Shared Object         Symbol                              
+# ........  ........  ........  ....................  ....................................
+#
+    33.33%     0.00%  test.exe  [kernel.kallsyms]     [k] asm_exc_page_fault
+            |
+            ---asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               |          
+                --26.67%--handle_mm_fault
+                          __handle_mm_fault
+                          |          
+                          |--20.00%--do_fault
+                          |          filemap_map_pages
+                          |          next_uptodate_folio
+                          |          |          
+                          |           --6.67%--xas_find
+                          |                     xas_load
+                          |          
+                           --6.67%--do_anonymous_page
+                                     vma_alloc_folio_noprof
+                                     folio_alloc_mpol_noprof
+                                     alloc_pages_mpol_noprof
+                                     __alloc_pages_noprof
+                                     get_page_from_freelist
+                                     __rmqueue_pcplist
+                                     __list_del_entry_valid_or_report
+
+    33.33%     0.00%  test.exe  [kernel.kallsyms]     [k] exc_page_fault
+            |
+            ---exc_page_fault
+               do_user_addr_fault
+               |          
+                --26.67%--handle_mm_fault
+                          __handle_mm_fault
+                          |          
+                          |--20.00%--do_fault
+                          |          filemap_map_pages
+                          |          next_uptodate_folio
+                          |          |          
+                          |           --6.67%--xas_find
+                          |                     xas_load
+                          |          
+                           --6.67%--do_anonymous_page
+                                     vma_alloc_folio_noprof
+                                     folio_alloc_mpol_noprof
+                                     alloc_pages_mpol_noprof
+                                     __alloc_pages_noprof
+                                     get_page_from_freelist
+                                     __rmqueue_pcplist
+                                     __list_del_entry_valid_or_report
+
+    33.33%     6.67%  test.exe  [kernel.kallsyms]     [k] do_user_addr_fault
+            |          
+            |--26.67%--do_user_addr_fault
+            |          handle_mm_fault
+            |          __handle_mm_fault
+            |          |          
+            |          |--20.00%--do_fault
+            |          |          filemap_map_pages
+            |          |          next_uptodate_folio
+            |          |          |          
+            |          |           --6.67%--xas_find
+            |          |                     xas_load
+            |          |          
+            |           --6.67%--do_anonymous_page
+            |                     vma_alloc_folio_noprof
+            |                     folio_alloc_mpol_noprof
+            |                     alloc_pages_mpol_noprof
+            |                     __alloc_pages_noprof
+            |                     get_page_from_freelist
+            |                     __rmqueue_pcplist
+            |                     __list_del_entry_valid_or_report
+            |          
+             --6.67%--0
+                       0x7efc263af8b8
+                       0x7efc26380b65
+                       0x7efc2637fd92
+                       asm_exc_page_fault
+                       exc_page_fault
+                       do_user_addr_fault
+
+    26.67%     0.00%  test.exe  ld-linux-x86-64.so.2  [.] 0x00007efc26394b08
+            |
+            ---0x7efc26394b08
+               |          
+               |--20.00%--0x7efc263944bf
+               |          |          
+               |          |--6.67%--__tunable_get_val@plt
+               |          |          asm_exc_page_fault
+               |          |          exc_page_fault
+               |          |          do_user_addr_fault
+               |          |          handle_mm_fault
+               |          |          __handle_mm_fault
+               |          |          do_fault
+               |          |          filemap_map_pages
+               |          |          next_uptodate_folio
+               |          |          
+               |          |--6.67%--0x7efc26397c8e
+               |          |          0x7efc25ec47f6
+               |          |          asm_exc_page_fault
+               |          |          exc_page_fault
+               |          |          do_user_addr_fault
+               |          |          handle_mm_fault
+               |          |          __handle_mm_fault
+               |          |          do_anonymous_page
+               |          |          vma_alloc_folio_noprof
+               |          |          folio_alloc_mpol_noprof
+               |          |          alloc_pages_mpol_noprof
+               |          |          __alloc_pages_noprof
+               |          |          get_page_from_freelist
+               |          |          __rmqueue_pcplist
+               |          |          __list_del_entry_valid_or_report
+               |          |          
+               |           --6.67%--0x7efc263966bf
+               |                     asm_exc_page_fault
+               |                     exc_page_fault
+               |                     do_user_addr_fault
+               |                     handle_mm_fault
+               |                     __handle_mm_fault
+               |                     do_fault
+               |                     filemap_map_pages
+               |                     next_uptodate_folio
+               |          
+                --6.67%--0x7efc2638d78a
+
+    26.67%     0.00%  test.exe  [kernel.kallsyms]     [k] handle_mm_fault
+            |
+            ---handle_mm_fault
+               __handle_mm_fault
+               |          
+               |--20.00%--do_fault
+               |          filemap_map_pages
+               |          next_uptodate_folio
+               |          |          
+               |           --6.67%--xas_find
+               |                     xas_load
+               |          
+                --6.67%--do_anonymous_page
+                          vma_alloc_folio_noprof
+                          folio_alloc_mpol_noprof
+                          alloc_pages_mpol_noprof
+                          __alloc_pages_noprof
+                          get_page_from_freelist
+                          __rmqueue_pcplist
+                          __list_del_entry_valid_or_report
+
+    26.67%     0.00%  test.exe  [kernel.kallsyms]     [k] __handle_mm_fault
+            |
+            ---__handle_mm_fault
+               |          
+               |--20.00%--do_fault
+               |          filemap_map_pages
+               |          next_uptodate_folio
+               |          |          
+               |           --6.67%--xas_find
+               |                     xas_load
+               |          
+                --6.67%--do_anonymous_page
+                          vma_alloc_folio_noprof
+                          folio_alloc_mpol_noprof
+                          alloc_pages_mpol_noprof
+                          __alloc_pages_noprof
+                          get_page_from_freelist
+                          __rmqueue_pcplist
+                          __list_del_entry_valid_or_report
+
+    20.00%     0.00%  test.exe  ld-linux-x86-64.so.2  [.] 0x00007efc263944bf
+            |
+            ---0x7efc263944bf
+               |          
+               |--6.67%--__tunable_get_val@plt
+               |          asm_exc_page_fault
+               |          exc_page_fault
+               |          do_user_addr_fault
+               |          handle_mm_fault
+               |          __handle_mm_fault
+               |          do_fault
+               |          filemap_map_pages
+               |          next_uptodate_folio
+               |          
+               |--6.67%--0x7efc26397c8e
+               |          0x7efc25ec47f6
+               |          asm_exc_page_fault
+               |          exc_page_fault
+               |          do_user_addr_fault
+               |          handle_mm_fault
+               |          __handle_mm_fault
+               |          do_anonymous_page
+               |          vma_alloc_folio_noprof
+               |          folio_alloc_mpol_noprof
+               |          alloc_pages_mpol_noprof
+               |          __alloc_pages_noprof
+               |          get_page_from_freelist
+               |          __rmqueue_pcplist
+               |          __list_del_entry_valid_or_report
+               |          
+                --6.67%--0x7efc263966bf
+                          asm_exc_page_fault
+                          exc_page_fault
+                          do_user_addr_fault
+                          handle_mm_fault
+                          __handle_mm_fault
+                          do_fault
+                          filemap_map_pages
+                          next_uptodate_folio
+
+    20.00%    13.33%  test.exe  [kernel.kallsyms]     [k] next_uptodate_folio
+            |          
+            |--13.33%--0x7efc26394b08
+            |          0x7efc263944bf
+            |          |          
+            |          |--6.67%--__tunable_get_val@plt
+            |          |          asm_exc_page_fault
+            |          |          exc_page_fault
+            |          |          do_user_addr_fault
+            |          |          handle_mm_fault
+            |          |          __handle_mm_fault
+            |          |          do_fault
+            |          |          filemap_map_pages
+            |          |          next_uptodate_folio
+            |          |          
+            |           --6.67%--0x7efc263966bf
+            |                     asm_exc_page_fault
+            |                     exc_page_fault
+            |                     do_user_addr_fault
+            |                     handle_mm_fault
+            |                     __handle_mm_fault
+            |                     do_fault
+            |                     filemap_map_pages
+            |                     next_uptodate_folio
+            |          
+             --6.67%--next_uptodate_folio
+                       xas_find
+                       xas_load
+
+    20.00%     0.00%  test.exe  [kernel.kallsyms]     [k] do_fault
+            |
+            ---do_fault
+               filemap_map_pages
+               next_uptodate_folio
+               |          
+                --6.67%--xas_find
+                          xas_load
+
+    20.00%     0.00%  test.exe  [kernel.kallsyms]     [k] filemap_map_pages
+            |
+            ---filemap_map_pages
+               next_uptodate_folio
+               |          
+                --6.67%--xas_find
+                          xas_load
+
+    13.33%     0.00%  test.exe  [unknown]             [k] 0000000000000000
+            |
+            ---0
+               0x7efc263af8b8
+               0x7efc26380b65
+               |          
+               |--6.67%--0x7efc2639d276
+               |          asm_exc_page_fault
+               |          exc_page_fault
+               |          do_user_addr_fault
+               |          handle_mm_fault
+               |          __handle_mm_fault
+               |          do_fault
+               |          filemap_map_pages
+               |          next_uptodate_folio
+               |          xas_find
+               |          xas_load
+               |          
+                --6.67%--0x7efc2637fd92
+                          asm_exc_page_fault
+                          exc_page_fault
+                          do_user_addr_fault
+
+    13.33%     0.00%  test.exe  [unknown]             [k] 0x00007efc263af8b8
+            |
+            ---0x7efc263af8b8
+               0x7efc26380b65
+               |          
+               |--6.67%--0x7efc2639d276
+               |          asm_exc_page_fault
+               |          exc_page_fault
+               |          do_user_addr_fault
+               |          handle_mm_fault
+               |          __handle_mm_fault
+               |          do_fault
+               |          filemap_map_pages
+               |          next_uptodate_folio
+               |          xas_find
+               |          xas_load
+               |          
+                --6.67%--0x7efc2637fd92
+                          asm_exc_page_fault
+                          exc_page_fault
+                          do_user_addr_fault
+
+    13.33%     0.00%  test.exe  ld-linux-x86-64.so.2  [.] 0x00007efc26380b65
+            |
+            ---0x7efc26380b65
+               |          
+               |--6.67%--0x7efc2639d276
+               |          asm_exc_page_fault
+               |          exc_page_fault
+               |          do_user_addr_fault
+               |          handle_mm_fault
+               |          __handle_mm_fault
+               |          do_fault
+               |          filemap_map_pages
+               |          next_uptodate_folio
+               |          xas_find
+               |          xas_load
+               |          
+                --6.67%--0x7efc2637fd92
+                          asm_exc_page_fault
+                          exc_page_fault
+                          do_user_addr_fault
+
+    13.33%     0.00%  test.exe  [kernel.kallsyms]     [k] entry_SYSCALL_64_after_hwframe
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               |          
+               |--6.67%--ksys_mmap_pgoff
+               |          vm_mmap_pgoff
+               |          do_mmap
+               |          __mmap_region
+               |          vm_area_alloc
+               |          kmem_cache_alloc_noprof
+               |          ___slab_alloc
+               |          
+                --6.67%--x64_sys_call
+                          __x64_sys_exit_group
+                          do_group_exit
+                          do_exit
+                          __mmput
+                          exit_mmap
+                          unmap_vmas
+                          unmap_page_range
+                          folio_remove_rmap_ptes
+
+    13.33%     0.00%  test.exe  [kernel.kallsyms]     [k] do_syscall_64
+            |
+            ---do_syscall_64
+               |          
+               |--6.67%--ksys_mmap_pgoff
+               |          vm_mmap_pgoff
+               |          do_mmap
+               |          __mmap_region
+               |          vm_area_alloc
+               |          kmem_cache_alloc_noprof
+               |          ___slab_alloc
+               |          
+                --6.67%--x64_sys_call
+                          __x64_sys_exit_group
+                          do_group_exit
+                          do_exit
+                          __mmput
+                          exit_mmap
+                          unmap_vmas
+                          unmap_page_range
+                          folio_remove_rmap_ptes
+
+    13.33%    13.33%  test.exe  ld-linux-x86-64.so.2  [.] 0x0000000000014eaa
+            |
+            ---0x20000
+               0x7efc2638deaa
+
+    13.33%     0.00%  test.exe  [unknown]             [.] 0x0000000000020000
+            |
+            ---0x20000
+               0x7efc2638deaa
+
+    13.33%     0.00%  test.exe  [unknown]             [.] 0x00007efc2607cbe8
+            |
+            ---0x7efc2607cbe8
+               |          
+               |--6.67%--0x7efc26382503
+               |          
+                --6.67%--0x7efc263824f4
+
+    13.33%     0.00%  test.exe  ld-linux-x86-64.so.2  [.] 0x00007efc2638deaa
+            |
+            ---0x7efc2638deaa
+
+     6.67%     6.67%  test.exe  [kernel.kallsyms]     [k] __list_del_entry_valid_or_report
+            |
+            ---0x7efc26394b08
+               0x7efc263944bf
+               0x7efc26397c8e
+               0x7efc25ec47f6
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               do_anonymous_page
+               vma_alloc_folio_noprof
+               folio_alloc_mpol_noprof
+               alloc_pages_mpol_noprof
+               __alloc_pages_noprof
+               get_page_from_freelist
+               __rmqueue_pcplist
+               __list_del_entry_valid_or_report
+
+     6.67%     0.00%  test.exe  ld-linux-x86-64.so.2  [.] 0x00007efc26397c8e
+            |
+            ---0x7efc26397c8e
+               0x7efc25ec47f6
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               do_anonymous_page
+               vma_alloc_folio_noprof
+               folio_alloc_mpol_noprof
+               alloc_pages_mpol_noprof
+               __alloc_pages_noprof
+               get_page_from_freelist
+               __rmqueue_pcplist
+               __list_del_entry_valid_or_report
+
+     6.67%     6.67%  test.exe  [kernel.kallsyms]     [k] xas_load
+            |
+            ---0
+               0x7efc263af8b8
+               0x7efc26380b65
+               0x7efc2639d276
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               do_fault
+               filemap_map_pages
+               next_uptodate_folio
+               xas_find
+               xas_load
+
+     6.67%     0.00%  test.exe  libc.so.6             [.] 0x00007efc25ec47f6
+            |
+            ---0x7efc25ec47f6
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               do_anonymous_page
+               vma_alloc_folio_noprof
+               folio_alloc_mpol_noprof
+               alloc_pages_mpol_noprof
+               __alloc_pages_noprof
+               get_page_from_freelist
+               __rmqueue_pcplist
+               __list_del_entry_valid_or_report
+
+     6.67%     6.67%  test.exe  [kernel.kallsyms]     [k] folio_remove_rmap_ptes
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_exit_group
+               do_group_exit
+               do_exit
+               __mmput
+               exit_mmap
+               unmap_vmas
+               unmap_page_range
+               folio_remove_rmap_ptes
+
+     6.67%     0.00%  test.exe  ld-linux-x86-64.so.2  [.] 0x00007efc2639d276
+            |
+            ---0x7efc2639d276
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               do_fault
+               filemap_map_pages
+               next_uptodate_folio
+               xas_find
+               xas_load
+
+     6.67%     6.67%  test.exe  [kernel.kallsyms]     [k] ___slab_alloc
+            |
+            ---0x7efc2639bb22
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               __mmap_region
+               vm_area_alloc
+               kmem_cache_alloc_noprof
+               ___slab_alloc
+
+     6.67%     0.00%  test.exe  ld-linux-x86-64.so.2  [.] 0x00007efc2639bb22
+            |
+            ---0x7efc2639bb22
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               __mmap_region
+               vm_area_alloc
+               kmem_cache_alloc_noprof
+               ___slab_alloc
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] x64_sys_call
+            |
+            ---x64_sys_call
+               __x64_sys_exit_group
+               do_group_exit
+               do_exit
+               __mmput
+               exit_mmap
+               unmap_vmas
+               unmap_page_range
+               folio_remove_rmap_ptes
+
+     6.67%     0.00%  test.exe  ld-linux-x86-64.so.2  [.] 0x00007efc263966bf
+            |
+            ---0x7efc263966bf
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               do_fault
+               filemap_map_pages
+               next_uptodate_folio
+
+     6.67%     0.00%  test.exe  libc.so.6             [.] __tunable_get_val@plt
+            |
+            ---__tunable_get_val@plt
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               do_fault
+               filemap_map_pages
+               next_uptodate_folio
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] __x64_sys_exit_group
+            |
+            ---__x64_sys_exit_group
+               do_group_exit
+               do_exit
+               __mmput
+               exit_mmap
+               unmap_vmas
+               unmap_page_range
+               folio_remove_rmap_ptes
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] do_anonymous_page
+            |
+            ---do_anonymous_page
+               vma_alloc_folio_noprof
+               folio_alloc_mpol_noprof
+               alloc_pages_mpol_noprof
+               __alloc_pages_noprof
+               get_page_from_freelist
+               __rmqueue_pcplist
+               __list_del_entry_valid_or_report
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] do_group_exit
+            |
+            ---do_group_exit
+               do_exit
+               __mmput
+               exit_mmap
+               unmap_vmas
+               unmap_page_range
+               folio_remove_rmap_ptes
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] ksys_mmap_pgoff
+            |
+            ---ksys_mmap_pgoff
+               vm_mmap_pgoff
+               do_mmap
+               __mmap_region
+               vm_area_alloc
+               kmem_cache_alloc_noprof
+               ___slab_alloc
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] vma_alloc_folio_noprof
+            |
+            ---vma_alloc_folio_noprof
+               folio_alloc_mpol_noprof
+               alloc_pages_mpol_noprof
+               __alloc_pages_noprof
+               get_page_from_freelist
+               __rmqueue_pcplist
+               __list_del_entry_valid_or_report
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] do_exit
+            |
+            ---do_exit
+               __mmput
+               exit_mmap
+               unmap_vmas
+               unmap_page_range
+               folio_remove_rmap_ptes
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] folio_alloc_mpol_noprof
+            |
+            ---folio_alloc_mpol_noprof
+               alloc_pages_mpol_noprof
+               __alloc_pages_noprof
+               get_page_from_freelist
+               __rmqueue_pcplist
+               __list_del_entry_valid_or_report
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] vm_mmap_pgoff
+            |
+            ---vm_mmap_pgoff
+               do_mmap
+               __mmap_region
+               vm_area_alloc
+               kmem_cache_alloc_noprof
+               ___slab_alloc
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] __mmput
+            |
+            ---__mmput
+               exit_mmap
+               unmap_vmas
+               unmap_page_range
+               folio_remove_rmap_ptes
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] alloc_pages_mpol_noprof
+            |
+            ---alloc_pages_mpol_noprof
+               __alloc_pages_noprof
+               get_page_from_freelist
+               __rmqueue_pcplist
+               __list_del_entry_valid_or_report
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] do_mmap
+            |
+            ---do_mmap
+               __mmap_region
+               vm_area_alloc
+               kmem_cache_alloc_noprof
+               ___slab_alloc
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] __alloc_pages_noprof
+            |
+            ---__alloc_pages_noprof
+               get_page_from_freelist
+               __rmqueue_pcplist
+               __list_del_entry_valid_or_report
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] __mmap_region
+            |
+            ---__mmap_region
+               vm_area_alloc
+               kmem_cache_alloc_noprof
+               ___slab_alloc
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] exit_mmap
+            |
+            ---exit_mmap
+               unmap_vmas
+               unmap_page_range
+               folio_remove_rmap_ptes
+
+     6.67%     0.00%  test.exe  ld-linux-x86-64.so.2  [.] 0x00007efc2637fd92
+            |
+            ---0x7efc2637fd92
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+
+     6.67%     6.67%  test.exe  ld-linux-x86-64.so.2  [.] 0x00000000000094f4
+            |
+            ---0x132d20
+               0x7efc2607cbe8
+               0x7efc263824f4
+
+     6.67%     6.67%  test.exe  ld-linux-x86-64.so.2  [.] 0x0000000000009503
+            |
+            ---0xb3df0
+               0x7efc2607cbe8
+               0x7efc26382503
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] get_page_from_freelist
+            |
+            ---get_page_from_freelist
+               __rmqueue_pcplist
+               __list_del_entry_valid_or_report
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] unmap_vmas
+            |
+            ---unmap_vmas
+               unmap_page_range
+               folio_remove_rmap_ptes
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] vm_area_alloc
+            |
+            ---vm_area_alloc
+               kmem_cache_alloc_noprof
+               ___slab_alloc
+
+     6.67%     0.00%  test.exe  [unknown]             [.] 0x00000000000b3df0
+            |
+            ---0xb3df0
+               0x7efc2607cbe8
+               0x7efc26382503
+
+     6.67%     0.00%  test.exe  [unknown]             [.] 0x0000000000132d20
+            |
+            ---0x132d20
+               0x7efc2607cbe8
+               0x7efc263824f4
+
+     6.67%     6.67%  test.exe  ld-linux-x86-64.so.2  [.] 0x000000000001478a
+            |
+            ---0x7efc26394b08
+               0x7efc2638d78a
+
+     6.67%     6.67%  test.exe  ld-linux-x86-64.so.2  [.] 0x0000000000015473
+            |
+            ---0x100
+               0x7efc2638e473
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] __rmqueue_pcplist
+            |
+            ---__rmqueue_pcplist
+               __list_del_entry_valid_or_report
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] kmem_cache_alloc_noprof
+            |
+            ---kmem_cache_alloc_noprof
+               ___slab_alloc
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] unmap_page_range
+            |
+            ---unmap_page_range
+               folio_remove_rmap_ptes
+
+     6.67%     0.00%  test.exe  [kernel.kallsyms]     [k] xas_find
+            |
+            ---xas_find
+               xas_load
+
+     6.67%     0.00%  test.exe  [unknown]             [.] 0x0000000000000100
+            |
+            ---0x100
+               0x7efc2638e473
+
+     6.67%     6.67%  test.exe  libc.so.6             [.] brk
+            |
+            ---brk
+
+     6.67%     6.67%  test.exe  libgcc_s.so.1         [.] __cpu_indicator_init
+            |
+            ---__cpu_indicator_init
+
+     6.67%     0.00%  test.exe  ld-linux-x86-64.so.2  [.] 0x00007efc263824f4
+            |
+            ---0x7efc263824f4
+
+     6.67%     0.00%  test.exe  ld-linux-x86-64.so.2  [.] 0x00007efc26382503
+            |
+            ---0x7efc26382503
+
+     6.67%     0.00%  test.exe  ld-linux-x86-64.so.2  [.] 0x00007efc2638d78a
+            |
+            ---0x7efc2638d78a
+
+     6.67%     0.00%  test.exe  ld-linux-x86-64.so.2  [.] 0x00007efc2638e473
+            |
+            ---0x7efc2638e473
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
